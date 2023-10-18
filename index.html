@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Generator</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+    
+
+
+  <link rel="stylesheet" href="/assets/index-8b39b0e5.css">
+</head>
+
+<body class="bg-[#C1A882]">
+    <header class="px-10 py-8 bg-[#202844] w-full">
+        <h1 class="text-white text-center text-2xl font-semibold ">Personalised Card Generator</h1>
+
+    </header>
+    <section class="bg-[#EAEAEA]">
+        <!-- Add button -->
+        <div class="fixed bottom-10 right-10">
+            <button id="addbutton" onclick="regformopen()" class=" px-5 py-4 bg-[#202844] rounded-full ">
+                <span class="material-symbols-outlined text-white text-3xl font-bold">
+                    add
+                </span>
+            </button>
+        </div>
+        <section>
+        <div id="reg-box" class="bg-[#C1A882] h-fit px-10  flex justify-center hidden">
+            <div class="bg-[#202844] text-[#C1A882] w-fit my-16  ">
+                <div class="px-16 py-10 flex flex-col items-center">
+                    <div class="font-bold py-10 text-xl">Fill in your Creditionals</div>
+                    <div class="py-3">
+                        <div>Full Name</div>
+                        <input id="name" class= " my-2 rounded-full px-5 py-2  text-black " type="text" placeholder="Enter your name">
+                        <div id="nameerror" class="text-red-500 hidden">invalid name</div>
+                    </div>
+                    <div class="py-3">
+                        <div>Email</div>
+                        <input id="email" class= " my-2 rounded-full px-5 py-2 text-black " type="email" placeholder="Enter your mail">
+                        <div id="emailerror" class="text-red-500 hidden">invalid email address</div>
+                    </div>
+                    <div class="py-3">
+                        <div>Phone Number</div>
+                        <input id="phone" class= " my-2 rounded-full px-5 py-2  text-black " type="tel" placeholder="enter your phone number">
+                        <div id="phoneerror" class="text-red-500 hidden">invalid phone number</div>
+                    </div>
+                    <div id="nochangemade" class="text-red-500 hidden">No changes made!</div>
+                    <div id="twoduplicate" class="text-red-500 hidden">duplicate email or phone already exist</div>
+                    <div>
+                        <button onclick="formvalidation()" class="bg-[#C1A882]  text-[#202844] px-3 py-2 mt-5 text-md font-bold rounded-full mb-10 ">SUBMIT</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+        <!-- card -->
+        <!-- maindiv -->
+        <div > 
+            <div id="maindiv" class="flex flex-wrap justify-center h-screen bg-[#C1A882]  ">
+                <!-- carddiv -->
+                <div class="w-[22rem] h-screen  rounded-2xl  shadow-2xl shadow-gray-900 hidden">
+                    <!-- coverphoto -->
+                    <div
+                        class="bg-[url(/asset/cover-texture.jpg)] h-[10rem] bg-cover bg-center rounded-b rounded-2xl hidden lg:block">
+                    </div>
+                    <!-- detailscontainer -->
+                    <div>
+                        <!-- button -->
+                        <div class="flex justify-end mt-3 mr-4 ">
+                            <!-- editbuttondiv -->
+                            <div>
+                                <!-- edit_button -->
+                                <button class="px-1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAABLgAAAS4Be3EaTQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF+SURBVEiJpdY/SxxBGMfxj74DixTqKfoagtgEQbCRxD+tVfoYtRYh78FGMH8IBNLYJShWvg61OQRTa/SSwnjnpdhZXfdubvf2fvCw7M7M93nmtzOzO6S3JrGC15hCLTz/hQsc4gcuCzgdGsc+mmgXRAsHoYBSWkWjBDgft1gugm+FivqFZ2ez2avyQeDZJB0zqVW0pZddY9kEXypA/uAtziLtn1L4pHKrJR8fwvjRSJJmcMZGhco/4k6yR2At0ncdjvuEzwXodkiyg9+R/kdwXgGeaq9gzBnlVs9fzOfgL3FVMK5RJkFVeBs3RRYNAm/jdBh13fWAfxLvU83iBCORMXnV4X0k+4Jks1xjJsBjqyUW72BC50ZLZzWcSdIv/N7T98PnXOP3zDRfdSmgTOxnvRqXHFCPLwdfw/WhAvxGcoQ802LFSvPRwlIenmrT4B+cjRg81XLOrn5seVMET/UCu5KVUKbqb7p4DkMFiWqeflumPf9tqUtOy5/hvqv+A5/Qh81qsZU0AAAAAElFTkSuQmCC" alt=""></button>
+                            </div>
+                            <!-- deletebuttondiv -->
+                            <div>
+                                <!-- delete_button -->
+                                <button class="px-1"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAACxAAAAsQHGLUmNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAzNJREFUSImVlcFvG1UQh7/3dr1LHUKbQOJAWnpDqkSRuBUJiQtIUI7ptjQ5QYEDggMV16rhAD0gEGqEOIGK1GChtHCixBIRkRB/AIUWDogiRUnTItyErjfe9Xs7HNZ2Y3vjmDm9nZ3ffDPv7ZtVDGASBA6OU0LbhwHQdo3Yua0WFuxuWtU38fTUUVDTwFFgpOv1HeAKink1f+m7/wWQl6aeRKvzwNO7VZgJ+BHHvqUufvPzrgCZPhYAF4DiQMnvWR2R11T58sUdATITnECknAdOJh9FikOZqBbira3kQQQ4ob68tNADaG7LT8CebpUZG8f9+JMO3+brr7K3tpkHiRB5SpUvXwVw226t50DayetvnsY9eDCrwvN6sgy9dw7TaGQF/HWDwtxHOFoDFFF6Dnim3UHza/m2o9cvyijXZRATY1h59jkmJ0ZxHN10qhdUeWGxlWGmW7T57ix19ECAdKtO0jCs3qpmEK1BpdPAopIgcCjI33R952bkQfS5DwYCrLz8Co2b6wB4ntuCVHns8TEXxymB6b5EqLiOHh4erINa1F4niWH1ZpXJidFR59q1cQ2NR/JEOq631+tnziLGEC4tES4tIcawfubsNkCtQ9vartDGhzRaSx5AWUu6tdVMEIIIaZyQxkm2roXZuyhCbO9IShJDPUomNNqu7dS6dFWWZ2m4c4yTpr9oYuc22eDKEYcDAO7mJ9daRpLkd90cuVfygmQgQH6M5xf+VMvLJrsHinmk9y60Dm/f8QDluuw5fDgLd132HQ86YnoArvs5kN2kbJ6rH3qiokxcPHIElKJwYD+FA/tBqcwH2Lu9W+T7hY3xSuX9NgAAbd4Gou2BsrGRW912s9XO49MKir5/qvXcOa6zf8FXLb/1fP4ZKWHSNDe5iBBf/400ulfXA8NDH5YqlXdyAQAyExxD5AIwBGBtyuqtKkli+nailGL4fv/TUuX7Nzr8uZWdnHoCpc7THLnWWlbX75A08iG+V9go3uefemhx8esecL+q5GTwfDYV1YvW2tHtEEdr8Xz3hucWPmsdaG5n/QBt0Oys5o+rpTBuHKr/m0yIk14fixq/quXl/vsG/AfIH1QLUPxhNwAAAABJRU5ErkJggg==" alt=""></button>
+                            </div>
+                        </div>
+                        <!-- detailscontainerdiv -->
+                        <div class="">
+                            <!-- namediv -->
+                            <div class=" px-5 pt-10 pb-4 text-4xl font-semibold text-center">Alex Mathai</div>
+                        </div>
+                        <!-- emaildiv -->
+                        <div>
+                            <!-- email -->
+                            <div class="text-lg py-3  text-center">alexmathai07@gmail.com</div>
+                        </div>
+                        <!-- phonecontainerdiv -->
+                        <div>
+                            <!-- phonediv -->
+                            <div class="text-lg py-3  text-center">+91 9400354724</div>
+                        </div>
+                        <!-- contacts_container_div -->
+                        <div class="flex justify-center mt-6 pb-7">
+                            <!-- phone_container -->
+                            <div class="px-3">
+                                <!-- phone_link -->
+                                <a href=""> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKNSURBVFiFtdZPiFdVFMDxz9NShtnFMOGUhpGGCDKTGLl1U21ahUK0mHKRkqPYRqc/GAYyFBrUIiNqUyIuRMgKCheCC7FUAkVECdFUGBgQzGgqm9ti7oPL873fe+/3m7lw+PHu+ff93XPOfS8LIehlZVk2gVX4Ft+FECZbBQgh9CT4HiHKfziN3Xi0kf8cALyH6wlELpN4sRUAhvAxzmMzFrYAGcae6JtDzOAAFtUC4Cn8XvgX37SBSGK9hKkkznmsrASoSN4rxBBOJHH+wOoSO49U1LARBN7ASIUuwy78E+NcRF8R4Iua5Ll8VZHgz6i/gQ/RX2K3I4lzsAhQdfRl8kzBeTCOXmpzuWgXbY8nNi+nAFMtAHaVBB40OzEnE7u/MVqwG8CtqL+Dx3KAqw2T/6XmcsFYtMshRgr6DWZHM+CdHODHBsln8FrD7l+H6aQc/QX96aj7NQfY0SD56y1H8M3Ef29B91aiWwnLSxoplffb3gEx0anof6Wwvywpw7sLQgjXcFT1Guyg67S+jr8rsiwbzjdDCDdwJj5uzKnWJFRlJVjfxQkM4Gd8iXUF3XN4HkvTzWMVAAEX8HA3pagFTQDWdgAI2DevABHi8xqIbfMN0IdLHQBm8Mq8ASQNOd0B4l+8WtOAj2Mcz7YGiAHGakoR8BkWl/huiZC53WE81AogBvq0AcRZPJn4bK0Y5yOqvidqjvKjBhDT+AQTHe6S/CQegKhvEj5oANFUDhUhmnUqb88hxGhrgAixE/fnAOBcVwARYgS/9Aiwv2uACLEA23G3i+Q3saQngMJl0+kFVpTbWNF6ChqAvIAfdP6o+Q1Pl/lnMUjPK8uyJ7DJ7Ft1OJ7QTfyE8RDCvTK//wFCjwZKj7GOoAAAAABJRU5ErkJggg==" alt=""></a>
+                            </div>
+                            <!-- email_container -->
+                            <div class="px-3">
+                                <!-- email_link -->
+                                <a href=""> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF/SURBVFiF7dZNTttQFIbhxxXsoEjdAAgUtSAVwYAh7IMupn9CobCFroO/EUtAMMuQNkHtMINWdQc5bg2JYwfZTqXySZZvjk/u9/raPvfwpP9dSZwX0cHzlnzvcIUfsIIbpC0fN1hOcIrdILsMsibVwU6MT2CIX0F1h40GzTfCIw3PofjRw9sYf8dmA+brOfNueKZ5AA1CrGOQM1cEAO8i9g2vazY/zMULAeqEeFVgXgpQB8Q080oA8D6u9/FyBvM13MZ/PxXkVAJ4DMRqBfOZAOBDRYi8+VHJnD2kz0qSHmoJZwUQq7jAixnnLF2BQ3/v/nOMvxqV1EydiKWR01f88mWq9Ai67i99guOIfcEWtmOcxrUkcjOI7tisFQGmvXwfje9umXmmsi9hKsBBxAdGlWyS3uA8jv2CnHwVPKgKUHcpLipIEwHqNs80aT8YA2hjO87viH8A5tqQJEZt0V4kzKUlW8a19pvSa9GUwkKQLTVxyxM0MFrpny35Pekf1m/uxvQ9sa0LrAAAAABJRU5ErkJggg==" alt=""></a>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+    
+                </div>
+            </div>
+
+        </div>
+        
+    </section>
+    
+    <script src="index.js"></script>
+</body>
+
+</html>
